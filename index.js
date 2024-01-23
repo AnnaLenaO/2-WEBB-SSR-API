@@ -10,9 +10,21 @@ const app = express();
 //template engine:
 app.set('view engine', 'ejs');
 
-//routes for answer requests goes here (app.get etc):
-app.get('/', (req, res) => {
-    res.render('home');
+//routes for answer requests:
+app.get('/', async (req, res) => {
+    const movies = await allMovies();
+    res.render('home', {
+        articles: movies
+    });
+});
+
+app.get('/movies/:movieId', async (req, res) => {
+    //const id = 5;
+    const movie = await oneMovie(req.params.movieId);
+    //const movie = await oneMovie(id);
+    res.render('movie', {
+        article: movie
+    });
 });
 
 app.use("/static", express.static("./static"));
