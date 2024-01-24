@@ -12,18 +12,11 @@
     <ul>
         <% articles.forEach((article)=> { %>
             <li>
-                <a href=<%= article.id %>
+                <a href=<%= '/movies/'+article.id %>
                     <h2>
                     <%= article.attributes.title %>
                     </h2>
                 </a>
-
-                <!--<a href=<%= /movies/id %>
-                    <%= article.attributes.title %>
-                </a>
-                <h2>
-                    <%= article.attributes.title %>
-                </h2>-->
             </li>
             <hr />
         <% }) %>

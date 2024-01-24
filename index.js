@@ -18,9 +18,9 @@ app.get('/', async (req, res) => {
     });
 });
 
-app.get('/movies/:movieId', async (req, res) => {
+app.get('/movies/:id', async (req, res) => {
     //const id = 5;
-    const movie = await oneMovie(req.params.movieId);
+    const movie = await oneMovie(req.params.id);
     //const movie = await oneMovie(id);
     res.render('movie', {
         article: movie
