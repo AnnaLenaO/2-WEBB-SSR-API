@@ -6,12 +6,21 @@ const API = 'https://plankton-app-xhkom.ondigitalocean.app/api';
 export async function allMovies() {
     const res = await fetch(API + '/movies');
     const content = await res.json();
-    return content.data;
+    const newArrayContent = content.data.map((obj) => {
+        return {
+            id: obj.id,
+            ...obj.attributes,
+        };
+    });
+    return newArrayContent;
 }
 
 //one movie
 export async function oneMovie(id) {
     const res = await fetch(API + '/movies/' + id);
     const content = await res.json();
-    return content.data;
+    return {
+        id: content.data.id,
+        ...content.data.attributes,
+    };
 }
