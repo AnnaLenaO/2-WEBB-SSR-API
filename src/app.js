@@ -2,9 +2,11 @@
 console.log("Hello World");
 
 import express from "express";
+import markdownit from 'markdown-it';
 import { allMovies, oneMovie } from "./movies.js";
 
 const app = express();
+const md = markdownit();
 
 //template engine:
 app.set('view engine', 'ejs');
@@ -19,8 +21,12 @@ app.get('/', async (req, res) => {
 
 app.get('/movies/:id', async (req, res) => {
     const movie = await oneMovie(req.params.id);
+    //markdown movie.intro to HTML:
+    const introHtml = md.render(movie.intro);
+
     res.render('movie', {
-        article: movie
+        article: movie,
+        introText: introHtml
     });
 });
 
