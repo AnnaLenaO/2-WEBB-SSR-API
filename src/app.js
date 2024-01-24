@@ -2,7 +2,6 @@
 console.log("Hello World");
 
 import express from "express";
-//to get access to resources from url:
 import { allMovies, oneMovie } from "./movies.js";
 
 const app = express();
