@@ -7,20 +7,22 @@
 
 <body>
     <h1>The Kino</h1>
+
+    <main>
+        <ul>
+            <% articles.forEach((article)=> { %>
+                <li>
+                    <a href=<%='/movies/' +article.id %>
+                        <h2>
+                            <%= article.title %>
+                        </h2>
+                    </a>
+                </li>
+                <hr />
+            <% }) %>
+        </ul>
+    </main>
+
 </body>
-<main>
-    <ul>
-        <% articles.forEach((article)=> { %>
-            <li>
-                <a href=<%= '/movies/'+article.id %>
-                    <h2>
-                    <%= article.title %>
-                    </h2>
-                </a>
-            </li>
-            <hr />
-        <% }) %>
-    </ul>
-</main>
 
 </html>
