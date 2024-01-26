@@ -12,6 +12,12 @@ const md = markdownit();
 app.set('view engine', 'ejs');
 
 //functions:
+function errorMovieHandle(err, req, res, next) {
+    res.status(404);
+    res.render('error', { error: err });
+    next(err);
+};
+
 //function errorMovieHandle(res, err) {
     //if (res.headersSent) {
         //console.error(err.status);
@@ -38,7 +44,17 @@ app.get('/', async (req, res, next) => {
 
 app.get('/movies/:id', async (req, res, next) => {
     const movie = await oneMovie(req.params.id)
-    .catch(err => {
+    .catch(err => next(err));
+
+    //markdown movie.intro to HTML:
+    const introHtml = md.render(movie.intro);
+    res.render('movie', {
+        article: movie,
+        introText: introHtml
+    });
+
+
+    /*.catch(err => {
         if(err) {
             res.status(404);
             res.render('error');
@@ -50,8 +66,8 @@ app.get('/movies/:id', async (req, res, next) => {
                 article: movie,
                 introText: introHtml
             });
-        }
-    });
+        };
+    });*/
 });
 
     //.catch(err => errorMovieHandle(res, err));
@@ -85,6 +101,8 @@ app.get('/movies/:id', async (req, res, next) => {
 app.use("/static", express.static("./static"));
 
 //error-handling middleware:
+app.use(errorMovieHandle);
+
 //app.use(funktionName for an error-handling middleware);
 /*app.use((err, req, res, next) => {
     res.status(404);
