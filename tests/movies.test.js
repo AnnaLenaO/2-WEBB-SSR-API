@@ -57,11 +57,3 @@ test('Pulp Fiction page shows correct title', async () => {
 
     expect(res.text).toMatch('Pulp Fiction');
 });
-
-//test that error page is shown:
-/*test('error page is shown when no movie page can render', async () => {
-    const res = await request(app).get('/movies/:id')
-    .expect(err);
-
-    expect(res.render).toMatch('error');
-});*/

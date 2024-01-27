@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 const API = 'https://plankton-app-xhkom.ondigitalocean.app/api';
 
