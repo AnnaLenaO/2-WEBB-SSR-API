@@ -2,18 +2,19 @@
 <%- include('header') %>
 
 <body>
-    <h1>
-        <%= article.title %>
-    </h1>
+    <div class='movieSite'>
+        <h1 class='movieTitle'>
+            <%= article.title %>
+        </h1>
 
-    <div>
-    <%- introText %>
-    </div>
+        <div class='introText'>
+            <%- introText %>
+        </div>
 
-    <div>
-    <img src=<%=article.image.url %>
+        <div class='movieContainer'>
+            <img class='movieContainer__poster' src=<%=article.image.url %> alt="Picture of the movie"/>
+        </div>
     </div>
-    
 </body>
 
 <%- include('footer') %>

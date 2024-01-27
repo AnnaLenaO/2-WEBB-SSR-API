@@ -2,23 +2,22 @@
 <%- include('header') %>
 
 <body>
-    <h1>The Kino</h1>
-
-    <main>
-        <ul>
-            <% articles.forEach((article)=> { %>
-                <li>
-                    <a href=<%='/movies/' +article.id %>
-                        <h2>
-                            <%= article.title %>
-                        </h2>
-                    </a>
-                </li>
-                <hr />
-            <% }) %>
-        </ul>
-    </main>
-
+    <div class='movies'>
+        <h1 class='theKino'>Movies</h1>
+        <main>
+            <ul class='movieList'>
+                <% articles.forEach((article)=> { %>
+                    <li class='movie'>
+                        <a class='movie__link' href=<%='/movies/' +article.id %>
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </main>
+    </div>
 </body>
 
 <%- include('footer') %>

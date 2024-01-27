@@ -216,3 +216,116 @@
     margin-bottom: 10px;
   }
 /*------------------------------*/
+
+/*----- home.ejs -----*/
+.movies{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #282222;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.theKino{
+  color: #bb3254;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.movieList{
+  list-style: none;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+}
+
+.movie{
+  margin: 1rem;
+}
+
+.movie__link{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.movie__link:hover {
+  color: #bb3254;
+  font-weight: bolder;
+}
+/*------------------------------*/
+
+/*----- movie.ejs -----*/
+.movieSite{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #282222;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+
+.movieTitle{
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.introText{
+  max-width: 600px;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 10vW;
+  margin-bottom: 20px;
+  margin-left: 10vw;
+}
+
+.movieContainer{
+  width: 300px; /* Adjust the width as needed */
+  height: 400px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  /*background-color: #7c7773; /* Room for link to booking */
+}
+
+.movieContainer__poster{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  /*height: 323px;*/
+  border-radius: 5px;
+  /*border-radius: 5px 5px 0 0; /* Rounded corners only at the top, room for booking*/
+}
+
+@media screen and (min-width: 750px) {
+  .movieContainer__poster {
+    height: 323px;
+  }
+}
+/*------------------------------*/
+
+/*----- error.js -----*/
+.error{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+/*------------------------------*/
