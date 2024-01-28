@@ -1,6 +1,3 @@
-//first test:
-console.log('Hello World');
-
 import express from 'express';
 import markdownit from 'markdown-it';
 import { allMovies, oneMovie } from './movies.js';

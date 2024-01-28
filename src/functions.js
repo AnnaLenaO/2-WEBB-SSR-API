@@ -4,5 +4,4 @@ export function errorMovieHandle (err, req, res, next) {
     }
     res.status(404);
     res.render('error', { error: err });
-    next(err);
 };
